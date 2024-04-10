@@ -215,11 +215,12 @@ const Detect = () => {
       const recognizer = await GestureRecognizer.createFromOptions(vision, {
         baseOptions: {
           modelAssetPath:
-            process.env.REACT_APP_FIREBASE_STORAGE_TRAINED_MODEL_25_04_2023,
+            'https://firebasestorage.googleapis.com/v0/b/react-detect-hand.appspot.com/o/sign_language_recognizer_25-04-2023.task?alt=media&token=f0c27307-af70-40db-9f79-532c27620949',
         },
         numHands: 2,
         runningMode: runningMode,
       });
+      console.log("Recognizer Loaded");
       setGestureRecognizer(recognizer);
     }
     loadGestureRecognizer();
